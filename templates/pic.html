@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<h1 style="text-align: center;" >プレゼント写真</h1>
+
+{% block content %}
+<form action="/add" method="post"></form>
+    <table border = "1" style="background-color: rgb(145, 223, 109)">
+        <tr>
+            <th>日 付</th>
+            <th>プレゼント</th>
+            <th>送り主</th>
+            <th>コメント</th>
+            <th>写 真</th> 
+        </tr>
+            <tr>
+                <input type="text" name="present_id" value="{{item['id']}}">
+                <td><input type="text" size="=100" maxlength="100" name="date" value="{{item['date']}}"></td>
+                <td><input type="text" size="=100" maxlength="100" name="present" value="{{item['present']}}"></td>
+                <td><input type="text" size="=100" maxlength="100" name="who" value="{{item['who']}}"></td>
+                <td><input type="text" size="=100" maxlength="100" name="comment" value="{{item['comment']}}"></td>
+                <td><input type="text" size="=100" maxlength="100" name="pic" value="{{item['pic']}}"></td>
+            </tr>    
+    </table> 
+
+<h2>＝＝＝＝＝＝＝＝＝＝この下に写真を入れ込みたい＝＝＝＝＝＝＝＝＝＝＝</h2>
+
+    <!-- <input type="submit" name="save" value="更新"> -->
+
+{% endblock %}

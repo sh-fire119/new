@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 style="margin-left: 300px;" >編集フォーム</h1>
+<form action="/edit" method="post">
+    <table border="1" style="background-color: darkkhaki;">
+        <tr>
+            <th>日付</th>
+            <th>送り主</th>
+            <th>プレゼント</th>
+            <th>コメント</th>
+            <th>写真</th>
+        </tr>
+            <tr>
+                <input type="text" name="present_id" value="{{item['id']}}">
+                <td><input type="text" size="=100" maxlength="100" name="date" value="{{item['date']}}" placeholder="日付"></td>
+                <td><input type="text" size="=100" maxlength="100" name="who" value="{{item['who']}}" placeholder="送り主"></td>
+                <td><input type="text" size="=100" maxlength="100" name="present" value="{{item['present']}}" placeholder="プレゼント"></td>
+                <td><input type="text" size="=100" maxlength="100" name="comment" value="{{item['comment']}}" placeholder="コメント"></td>
+                <td><input type="text" size="=100" maxlength="100" name="pic" value="{{item['pic']}}" placeholder="写真"></td>
+            </tr>
+    </table>
+    <input type="submit" name="save" value="更新">
+</form>
+
+    
+<br><br><br>
+<a href="/add">タスク追加ページへ</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="text-align: center;" >プレゼント　リスト</h1>
+<table border="1">
+    {% for item in present_list %}
+
+            <tr>
+                <!-- <td>{{item["id"]}}</td> -->
+                <td>{{item["date"]}}</td>
+                <td>{{item["who"]}}</td>
+                <td>{{item["present"]}}</td>
+                <td>{{item["comment"]}}</td>
+                <td>{{item["pic"]}}</td>
+                <td><a href="/edit/{{item['id']}}">編集</a></td>
+                <td><a href="/del/{{item['id']}}">削除</a></td>
+            </tr>
+    {% endfor %}
+</table>
+
+<button><a href="/add">プレゼント登録ページへ</a></button>
+<br>
+<br>
+
+<button><a href="/logout">ログアウトする</a></button>
+{% endblock %}

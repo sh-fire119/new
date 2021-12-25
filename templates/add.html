@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+<h1 style="text-align:center;" >プレゼント登録フォーム</h1>
+
+<form action="/add" method="post">
+    <table border="1" style="background-color: cornsilk;">
+        <tr>
+            
+            <th>日付</th>
+            <th>送り主</th>
+            <th>プレゼント</th>
+            <th>コメント</th>
+            <th>写真</th>
+        </tr>
+            <tr>
+                <input type="hidden" name="present_id">
+                <td><input type="text" size="=100" maxlength="100" name="date"></td>
+                <td><input type="text" size="=100" maxlength="100" name="present"></td>
+                <td><input type="text" size="=100" maxlength="100" name="who"></td>
+                <td><input type="text" size="=100" maxlength="100" name="comment"></td>
+                <td><input type="text" size="=100" maxlength="100" name="pic"></td>
+            </tr>
+
+    </table>
+    <br>      
+    <input type="submit" name="save" value="送信" >
+</form>
+<br>
+<br>
+
+<button><a href="/list">リスト一覧へ</a></button>
+
+{% endblock %}
