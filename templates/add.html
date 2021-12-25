@@ -4,6 +4,8 @@
 
 
 {% block content %}
+<br>
+
 <h1 style="text-align:center;" >プレゼント登録フォーム</h1>
 
 <form action="/add" method="post">
@@ -29,6 +31,16 @@
     <br>      
     <input type="submit" name="save" value="送信" >
 </form>
+<br>
+<br>
+
+<h1>
+    写真をアップロード!
+    </h1>
+    <form method = post enctype = multipart/form-data>
+        <p><input type=file name = file>
+        <input type = submit value = アップロード>
+    </form>
 <br>
 <br>
 
