@@ -3,7 +3,7 @@ from re import template
 from sqlite3.dbapi2 import complete_statement
 from types import MethodDescriptorType
 from typing import ItemsView
-from flask import Flask, render_template, request, redirect,session
+from flask import Flask, render_template, request, redirect, session,  url_for
 import os
 import sqlite3, random
 
@@ -189,6 +189,14 @@ def logout():
     return redirect("/login")
 
 #画像のアップロード
+# 画像のアップロード先のディレクトリ
+UPLOAD_FOLDER = './static/img/'
+# アップロードされる拡張子の制限
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'gif'])
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+
 @app.route("/uploads", methods=["GET", "POST"])
 def upload_file():
     if request.method == "POST":
